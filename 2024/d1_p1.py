@@ -4,10 +4,12 @@ total = 0
 right = []
 left = []
 
-# parse numbers from the inputs
-vals = input("Input: ")
+# parse numbers from the input file
+f = open("input.txt", 'r')
 reg = "\d+"
-vals = re.findall(reg, vals)
+vals = re.findall(reg, f.read())
+f.close()
+
 
 # assemble each list
 left = [int(val) for val in vals[::2]]
